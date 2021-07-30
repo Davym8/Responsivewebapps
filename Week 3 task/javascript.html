@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        
+    </head>
+    <body>
+        <div>
+            <h2>Display date and time</h2>
+            <button onclick="showdatetime()">Click to display date.</button>
+            <p id="date"></p>
+        </div>
+        <div>
+            <h2>Count string</h2>
+            <label for="string">Input String:</label>
+            <input type="text" id="string">
+            <br>
+            <button onclick="getcount()" id="btn">Click to count input</button>
+        </div>
+        <div> 
+            <h2>Numbers and Arrays</h2>
+            <br>
+            <label for="number">Input String:</label>
+            <input type="text" id="number">
+            <br>
+            <button onclick="getnumber()" id="btnnum">convert into number</button>
+            <br>
+            <h2>Arrays</h2>
+            <p id="array"></p>
+        </div>
+    </body>
+    <script>
+        var cards = new Array("Dracolich", "lichbane", "Vormir", "Hotsoup", "jace", "Aether");
+        document.getElementById("array").innerHTML = cards.toString();
+    </script>
+    <script>
+        function getnumber()
+        {
+            var str = document.getElementById("number").value;
+            alert(parseFloat(str));
+        }
+    </script>
+    <script>
+        function getcount()
+        {
+            var str = document.getElementById("string").value;
+            alert("Count is: " + str.length );
+        }
+    </script>
+    <script>
+        function showdatetime()
+        {   
+            var currentdate = new Date(); 
+            var datetime = "Current Date: " + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+            document.getElementById("date").innerHTML = datetime;
+        }
+    </script>
+</html>
