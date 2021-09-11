@@ -1,0 +1,12 @@
+html
+{
+    background-color: wheat;
+    
+}
+
+figure > img
+{
+    width: 800;
+    height: 600px;
+}
+  

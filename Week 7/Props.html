@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Props</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script script src="https://unpgk.com/Vue"></script>
+    <script src="https://kit.fontawesome.com/ff81f652af.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  <body>
+    <div id="nihonreview"></div>
+    <script>
+        const bashoformat = {
+        props: ["name", "location"],
+        template: 
+            `<div>
+            <h2> {{name}} </h2>
+            <h3> {{location}}</h3>
+            </div>`
+        };
+
+        const imagespot = {
+        props: ["imageURL", "altText"],
+        template: `
+        <div>
+            <figure>
+            <img v-bind:src="imageURL" :alt="altText" />
+            </figure>
+        </div>`};
+
+        const description = {
+        props: ["bio", "dateVisited"],
+        template: 
+            `<div>
+            <p> {{bio}} </p>
+            <p> {{dateVisited}}</p>
+            </div>`
+        };
+
+        Vue.component('title-part', {
+        template: `<div><h1>{{ heading }}</h1></div>`,
+        data() {
+            return {
+            heading: "Special places in Japan"       };
+        }
+        });
+        
+        Vue.component('location-one', {
+        template: `
+        <div>
+            <place-name name="Unknown" location="Nagoya, Aichi-ken,
+            Japan"/>
+            <picture-spot imageURL="cherry.png" altText="Cherry blossoms"/>
+            <place-bio bio="This photo was taken in Japan during spring where the cherry blossoms bloom and sprout. In japan they have giant tunnels with the buds and flowers creating an arch like in the image" dateVisited="April 25, 2017" />
+        </div>`,
+        components: {
+            'place-name' : bashoformat,
+            'picture-spot' : imagespot,
+            'place-bio' : description
+        }
+        });
+
+        Vue.component('location-two', {
+        template: `
+            <div>
+            <place-name name="Kenrokuen"
+            location="Kanazawa, Ishikawaken"/>
+        <picture-spot imageURL="ken.png" altText="The 3rd most beautiful garden in Japan"/>
+        <place-bio bio="Taken while walking through the park in the early morning, beautiful lake and castle right next to it as well." dateVisited="January 29, 2017" /></div>`,
+        components: {
+            'place-name' : bashoformat,
+            'picture-spot' : imagespot,
+            'place-bio' : description
+        }
+        });
+
+        Vue.component('location-three', {
+        template: `
+        <div><place-name name="Matsumoto mountain" location="Matsumoto, Naganoken, Japan"/>
+        <picture-spot imageURL="matsumoto.jpg" altText="Mountains" />
+        <place-bio bio="While hiking the second highest peak in Japan we took a photo together nearby the lake." dateVisited="July 8, 2018" /></div>`,
+        components: {
+            'place-name' : bashoformat,
+            'picture-spot' : imagespot,
+            'place-bio' : description
+        }
+        });
+
+        Vue.component('end-summary-part', {
+        template: `<div><h3>These are some of my favourite spots in Japan!</h3></div>`
+        });
+
+        const app = new Vue({
+        el: "#nihonreview",
+        template:
+        `<div id = "JapanReview">
+            <title-part />
+            <location-one />
+            <location-two />
+            <location-three />
+            <end-summary-part />
+        </div>`
+        });
+    </script>
+  </body>
+</html>
+
+
+
+
