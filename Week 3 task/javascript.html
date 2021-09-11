@@ -1,36 +1,54 @@
 <!DOCTYPE html>
 <html>  
     <head>
-        
+        <link href="styles.css"rel="stylesheet" >
     </head>
+    <div class="container">
+        <div class="Header">
+            <h1> Week 3 Tasks</h1>
+        </div>
+        <div class="Sidebar">
+            <div>
+                <h2>Display date and time</h2>
+                <button onclick="showdatetime()">Click to display date.</button>
+                <p id="date"></p>
+            </div>
+        </div>
+        <div class="Main-content">
+            <div>
+                <h2>Count string</h2>
+                <label for="string">Input String:</label>
+                <input type="text" id="string">
+                <br>
+                <button onclick="getcount()" id="btn">Click to count input</button>
+            </div>
+        </div>
+        <div class="rightbar">
+            <div> 
+                <h2>Numbers and Arrays</h2>
+                <br>
+                <label for="number">Input String:</label>
+                <input type="text" id="number">
+                <br>
+                <button onclick="getnumber()" id="btnnum">convert into number</button>
+                <br>
+                <h2>Arrays</h2>
+                <p id="array"></p>
+                <br>
+                <p id="numarray"></p>
+            </div>
+        </div>
+      </div>
     <body>
-        <div>
-            <h2>Display date and time</h2>
-            <button onclick="showdatetime()">Click to display date.</button>
-            <p id="date"></p>
-        </div>
-        <div>
-            <h2>Count string</h2>
-            <label for="string">Input String:</label>
-            <input type="text" id="string">
-            <br>
-            <button onclick="getcount()" id="btn">Click to count input</button>
-        </div>
-        <div> 
-            <h2>Numbers and Arrays</h2>
-            <br>
-            <label for="number">Input String:</label>
-            <input type="text" id="number">
-            <br>
-            <button onclick="getnumber()" id="btnnum">convert into number</button>
-            <br>
-            <h2>Arrays</h2>
-            <p id="array"></p>
-        </div>
+        
+        
+        
     </body>
     <script>
         var cards = new Array("Dracolich", "lichbane", "Vormir", "Hotsoup", "jace", "Aether");
         document.getElementById("array").innerHTML = cards.toString();
+        var numa = new Array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20);
+        document.getElementById("numarray").innerHTML = numa.toString();
     </script>
     <script>
         function getnumber()

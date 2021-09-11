@@ -1,0 +1,47 @@
+html
+{
+    background-color: bisque;
+}
+.container 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row dense;
+    justify-content: start;
+    align-content: center;
+    grid-template-areas:
+      "Header Header Header Header"
+      "Sidebar Main-content Main-content rightbar"
+      "Sidebar Main-content Main-content rightbar"
+      "Sidebar Main-content Main-content rightbar";
+  }
+  
+.Header 
+{ 
+    border: blue solid 2px;
+    grid-area: Header; 
+    text-align: center;
+}
+  
+.Sidebar 
+{   
+    border-left: blue solid 2px;
+    border-bottom: blue solid 2px;
+    grid-area: Sidebar; 
+}
+  
+.Main-content 
+{   
+    border: blue solid 2px;
+    grid-area: Main-content; 
+}
+  
+.rightbar 
+{   
+    border-bottom: solid 2px blue;
+    grid-area: rightbar; 
+    border-right: blue solid 2px;
+}
+  
