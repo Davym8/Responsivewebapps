@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/registerstyles.css">
+    <meta charset="utf-8">
+
+    <title>Lan-Slide</title>
+    
+    <script src="../js/vue.js"></script>
+
+    <script src="https://kit.fontawesome.com/ff81f652af.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+
+  <body>
+    <!--This is the header-->
+    <header>
+        <div class="leftheader">
+          <div class="logo">
+            <a href="otherlans.html"><img src="../images/logos.png" alt="Logo" style="width:125px;height:11vh;"></a>
+          </div>
+          <!--This is the Topnav-->
+          <div class="topnav">
+            <ul>
+              <li>
+                <a href="games.html" class="spec">Games</a>
+              </li>
+              <li>
+                <a href="about-us.html" class="spec">About Us</a>
+              </li>
+              <div class='bx bx-menu' id="menubtn">
+                <div class="dropm">
+                  <ul>
+                    <li>
+                      <a href="https://www.facebook.com/LANslideAU">Facebook</a>
+                    </li>
+                    <li>
+                      <a href="login.html">Login</a>
+                    </li>
+                    <li>
+                      <a href="register.html">Register</a>
+                    </li>
+                    <li>
+                      <a href="games.html" class="spec2">Games</a>
+                    </li>
+                    <li>
+                      <a href="about-us.html" class="spec2">About Us</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </ul>
+          </div>
+          <!--This is the Topnav-->
+        </div>
+        <div class="middle">
+            <a href="Index.html"><img src="../images/title.png" alt="title"/></a>
+        </div>
+        <!--This is the rightnav-->
+        <div class="right">
+          <div class="rightlogo">       
+              <a href="https://www.facebook.com/LANslideAU"><img src="../images/facebook.png" alt="FB link"></a>        
+          </div>
+          <div class="rightnav">
+            <ul>
+              <li>
+                <a href="login.html">Login</a>
+              </li>
+              <li>
+                <a href="register.html">Register</a>
+              </li>   
+            </ul>
+          </div>
+        </div>
+        
+    </header>
+    <!--This is the header-->
+
+    <!--This is the sidebar for navigation-->
+    <div class="sidebar">
+      <div class="logo-details">
+      <div class="logo_name">LAN-Slide
+        <i class='bx bx-menu' id="btn"></i>
+      </div>
+      </div>
+      <ul class="nav-list">
+        <li>
+            <i class='bx bx-search' ></i>
+            <div id="searchbox">
+              <input type="text" v-model="search" placeholder="Search...">
+            </div>
+            <span class="tooltip">Search</span>
+        </li>
+        <li>
+          <a href="Index.html">
+            <i class='bx bx-grid-alt'></i>
+            <span class="links_name">Home</span>
+          </a>
+            <span class="tooltip">Home</span>
+        </li>
+        <li>
+          <a href="rego.html">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Registration List</span>
+          </a>
+          <span class="tooltip">Registration List</span>
+        </li>
+        <li>
+          <a href="contact.html">
+            <i class='bx bx-chat' ></i>
+            <span class="links_name">Contact Us</span>
+          </a>
+          <span class="tooltip">Contact Us</span>
+        </li>
+        <li>
+          <a href="competitions.html">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Competitions</span>
+          </a>
+          <span class="tooltip">Competitions</span>
+        </li>
+        <li>
+          <a href="events.html">
+            <i class='bx bx-folder' ></i>
+            <span class="links_name">Past Events</span>
+          </a>
+          <span class="tooltip">Past Events</span>
+        </li>
+        <li>
+          <a href="bookings.html">
+            <i class='bx bx-cart-alt' ></i>
+            <span class="links_name">Seat Bookings</span>
+          </a>
+          <span class="tooltip">Seat Bookings</span>
+        </li>
+        <li>
+          <a href="promotions.html">
+            <i class='bx bx-heart' ></i>
+            <span class="links_name">Promotions</span>
+          </a>
+          <span class="tooltip">Promotions</span>
+        </li>
+        <li>
+          <a href="rules.html">
+          <i class='bx bx-ruler'></i>
+            <span class="links_name">Rules</span>
+          </a>
+          <span class="tooltip">Rules</span>
+        </li>
+        <li>
+        <a href="https://discord.gg/CH3zJhaSWH">
+          <i class='bx bxl-discord' ></i>
+          <span class="links_name">Discord</span>
+        </a>
+        <span class="bx bxl-discord">Discord</span>
+        </li>
+      </ul>
+      <div class="discordwidget">
+        <widgetbot
+        server="864723278458257438"
+        channel="864724547311370251"
+        height="600px"
+        ></widgetbot>
+        <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+      </div>
+    </div>
+    <!--This is the sidebar for navigation-->
+      <div class="container"> 
+        <div class="Body">
+          <div class="main">
+            <h1>Account Registration</h1> 
+            <div class="regcontainer">
+              <div id="app" class="signup">
+                <transition name="fade" mode="out-in">
+                  <component :is="compname" @change_comp="swapcomp($event)"></component>
+                </transition>
+              </div>
+              <template id="signup-form">
+                  <form>
+                    <div class="form-group">
+                      <label for="firstname">First name: </label>
+                      <input id="firstname" v-model.trim="firstname" type="text" placeholder="Enter Name"> 
+                      <span v-show="first_name">{{ first_name }}</span>
+
+                      <label for="lastname">Last Name: </label>
+                      <input id="lastname" v-model.trim="lastname" type="text" placeholder="Enter Last Name"> 
+                      <span v-show="last_name">{{ last_name }}</span>
+
+                      <label for="username">Username: </label>
+                      <input id="name" v-model.trim="username" type="text" placeholder="Enter username"> 
+                      <span v-show="user_name">{{ user_name }}</span>
+
+                      <label for="email" >Email</label>
+                      <input type="text" v-model.trim="email" placeholder="Enter Email"/>
+                      <span v-if="email.length > 1">{{ email_msg }}</span>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="psw1"></label>Password <span id="characters">(6 or more characters required)</span></label>
+                      <input type="password" v-model.trim="password1" placeholder="Enter Password" />
+                      <span v-show="msg1">{{ pwd1_msg }}</span>
+                    </div>
+                    <div class="form-group">
+                      <label for="psw2" >Repeat Password</label>
+                      <input type="password" v-model.trim="password2" placeholder="Confirm Password"/>
+                      <span v-show="msg2">{{ pwd2_msg }}</span>
+                    </div>
+                    <div class="form-group">
+                      <table>
+                        <tbody>
+                        <tr>
+                        <td><input type="checkbox" value="true"  v-model="checked" @change="clickHandler">agree to terms and conditions</input></td>
+                        <td><input type="checkbox" value="true"  v-model="checkers" @change="newsHandler">signup to newsletter</input></td>
+                        </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                    <div class="form-group">
+                      <button :class="{active: disable_btn}":disabled="disable_btn" @click.prevent="on_signup()">Sign Up</button>
+                      <a href="#0" @click="show_terms()">terms & conditions</a>
+                    </div>
+                  </form>
+                </template>
+              
+                <template id="results">
+                  <div class="results">
+                    <h4>Account Registration Successful</h4>
+                    <button @click="back_to_signup()">Continue</button>
+                  </div>
+                </template>       
+                <template id="terms">
+                  <div class="terms">
+                    <h4>TERMS & CONDITIONS</h4>
+                    <p>A list of terms, conditions, and policies.</p>
+                    <button @click="back_to_signup()">Back</button>
+                  </div>
+                </template>            
+            </div>
+          </div>
+        </div>
+        
+        <div class="Side-panel">
+          <div class="section-1">
+            <h2>Excited for a lan party?</h2>
+            <div>
+              <a href="https://logwork.com/countdown-q7c8" class="countdown-timer" 
+                data-style="circles" data-timezone="Australia/Melbourne" 
+                data-textcolor="#ff9f63" data-date="2021-10-08 13:33" data-background="#3decf5" 
+                data-digitscolor="#ff9f63" data-unitscolor="#ff9f63" style="z-index: -1;">Lan-slide Event Starts In
+            </a>
+            </div>
+          </div>
+          <div class="section-2">
+            <h1>For Gamers By Gamers</h1>
+            <div>
+              <video width="100%" height="100%" loop="true" controls autoplay="true" controls muted>
+                <source src="../images/lanslide.mp4">
+              </video>
+            </div>
+          </div>
+          <div class="section-3">
+            <div class="title">
+              <h1>General Information</h1>
+            </div>
+              <ul>
+                <li>
+                  Start	Saturday, April 17 2022 @ 9:00am
+                </li>
+                <li>
+                  End	Sunday, April 18 2022 @ 1:00am
+                </li>
+                <li>
+                  Cost	$30.00
+                </li>
+              </ul>
+              <div class="footnotes">
+                <p>
+                  LAN-slide is run as a community event by a dedicated group of unpaid Event Coordinators.
+                  Entry fees are charged to cover costs of venue hire, electricity and other necessary equipment.
+                </p>
+              </div>             
+          </div>
+        </div>
+      </div>
+
+    <!--This is the footer-->
+    
+    <footer class="footer">
+      <div class="texter">
+        <p>
+          LAN-slide is run as a community event by a dedicated group of unpaid Event Coordinators.
+          Entry fees are charged to cover costs of venue hire, electricity and other necessary equipment.
+        </p>
+      </div>   
+    </div>
+    
+    <script src="../js/app.js"></script>
+    <script src="https://cdn.logwork.com/widget/countdown.js"></script>
+    <script> 
+      let btn = document.querySelector("#btn");
+      let sidebar = document.querySelector(".sidebar");
+      let searchBtn = document.querySelector(".bx-search");
+      
+      let menubtn = document.querySelector("#menubtn")
+      let dropm = document.querySelector(".dropm");
+
+      menubtn.onclick = function()
+      {
+        dropm.classList.toggle("active");
+      }
+
+      btn.onclick = function()
+      {
+        sidebar.classList.toggle("active");
+      }
+      searchBtn.onclick = function()
+      {
+        sidebar.classList.toggle("active");
+      }
+
+      const input = document.getElementById('value');
+      const progressValue = document.querySelector('.Progress-value');
+      const progress = document.querySelector('progress');
+
+      function setValue(value) 
+      {
+        progressValue.style.width = `${value}%`;
+        progress.value = value;
+      }
+
+      setValue(input.value);
+
+      input.addEventListener('change', e => {
+      const value = e.target.value;
+      setValue(value);
+      });
+
+    </script>
+    <script src="registration.js"></script>
+  </body>
+</html> 
