@@ -18,15 +18,13 @@ var eventdata = {
 
 var gridviewApp = new Vue({
 	
-	el: '#app-gridview',
-	
+	el: '#app-switchview',
 	data: {
 		gridData: eventdata,
         buttonSwitchViewText: "Switch to ListView",
         isGridView: true,
         isBookData: false
 	},
-	
 	methods: {
 		
 		switchView: function() {
@@ -37,10 +35,19 @@ var gridviewApp = new Vue({
 			else {
                 this.buttonSwitchViewText = "Switch to ListView";
 			}
-			
 			this.isGridView = !this.isGridView;
         },
-	
-	}
-	
+	},
+    switchData: function () {
+
+        if (this.isBookData) {
+            this.buttonSwitchDataText = "Switch to games data";
+            this.gridData = photos;
+        }
+        else {
+            this.buttonSwitchDataText = "Switch to photos data";
+            this.gridData = games;
+        }
+        this.isBookData = !this.isBookData;
+    }
 });
