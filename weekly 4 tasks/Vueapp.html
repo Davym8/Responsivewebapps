@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vue week 4</title>
+        <script src="https://unpkg.com/vue"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="Header">
+                <h1>Vue app Week 4</h1>
+            </div>
+            <div class="Sidebar">
+                <h1>Sidebar Declerative rendering</h1>
+                <form id="inputsform">                   
+                    <p>
+                      <input type="text" v-model="msg">
+                      {{msg}}
+                    </p>                   
+                    <p>
+                      <input type="checkbox" v-model="checked">
+                      {{checked ? "yes" : "no"}}
+                      <h2 v-if="checked">
+                        <a href="https://quickdraw.withgoogle.com/">The secret link</a>
+                      </h2>           
+                    </p>
+                    <p>
+                      <input type="radio" name="picked" value="one" v-model="picked">
+                      <input type="radio" name="picked" value="two" v-model="picked">
+                      {{picked}}
+                    </p>
+                    
+                    <p>
+                      <select v-model="selected">
+                        <option>one</option>
+                        <option>two</option>
+                        <option>three</option>
+                        <option>four</option>
+                        <option>five</option>
+                        
+                      </select>
+                      {{selected}}
+                    </p>
+                    <p>
+                      <select v-model="Selection" multiple>
+                        <option>one</option>
+                        <option>two</option>
+                        <option>three</option>
+                        <option>four</option>
+                        <option>five</option>
+                      </select>
+                      {{Selection}}
+                    </p>
+                    <p><pre>data: {{$data | json 2}}</pre></p>
+                  </form>
+            </div>
+            <div class="Main-content">
+                <h1>Main content</h1>
+                <div id="app">
+                    <p> {{message}} </p>
+                    <br>
+                    <span v-bind:title="record">
+                        Hover to see website load date.
+                    </span>
+                </div>
+                <div id="Toggle">
+                    <p>{{ message }}</p>
+                    <button v-on:click="showtext">Click to reverse message</button>
+                </div>
+                <br>
+                <div id="test">
+                    <h2>Text Input:</h2>
+                    <div v-for="(list, index) in item">
+                      <input type="text" :id=`name-${index}` name="name" v-model="list.name" placeholder="Red or blue pill?" />
+                      {{list.name}}
+                    </div>
+                </div>               
+            </div>
+            <div class="rightbar">
+                <h1>Right content</h1>
+                <div id="video">
+                    <p v-show="displayvideo">Wonder what happens when you click?</p>
+                    <p v-show="!displayvideo"><iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                    </iframe></p>
+                    
+                    <button v-on:click="displayvideo = !displayvideo">CLICK ME</button>
+                  </div>
+            </div>
+        </div>
+        <script src='app.js'></script>
+    </body>   
+</html>

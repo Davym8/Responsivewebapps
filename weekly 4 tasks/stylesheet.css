@@ -1,0 +1,62 @@
+html
+{
+    background-color: sandybrown;
+}
+.container 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    justify-content: start;
+    grid-template-areas:
+        "Header Header Header Header"
+        "Sidebar Main-content Main-content rightbar"
+        "Sidebar Main-content Main-content rightbar"
+        "Sidebar Main-content Main-content rightbar";
+}
+  
+.Header 
+{   border: 2px solid orange;
+    grid-area: Header; 
+    text-align: center;
+}
+  
+.Sidebar 
+{   
+    border: 2px solid orange;
+    grid-area: Sidebar; 
+}
+  
+.Main-content 
+{   
+    border: 2px solid orange;
+    grid-area: Main-content;
+    text-align: center;
+}
+.Main-content #test
+{
+    background-color: sandybrown;
+}
+  
+.rightbar 
+{   
+    border: 2px solid orange;
+    grid-area: rightbar; 
+    text-align: center;   
+}
+
+#test {
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    transition: all 0.2s;
+  }
+  
+  h2 {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
