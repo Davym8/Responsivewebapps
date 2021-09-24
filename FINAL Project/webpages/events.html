@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/eventstyles.css">
+    <meta charset="utf-8">
+
+    <title>Lan-Slide</title>
+    
+    <script src="../js/vue.js"></script>
+
+    <script src="https://kit.fontawesome.com/ff81f652af.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+
+  <body>
+    <!--This is the header-->
+    <header>
+        <div class="leftheader">
+          <div class="logo">
+            <a href="otherlans.html"><img src="../images/logos.png" alt="Logo" style="width:125px;height:11vh;"></a>
+          </div>
+          <!--This is the Topnav-->
+          <div class="topnav">
+            <ul>
+              <li>
+                <a href="games.html" class="spec">Games</a>
+              </li>
+              <li>
+                <a href="about-us.html" class="spec">About Us</a>
+              </li>
+              <div class='bx bx-menu' id="menubtn">
+                <div class="dropm">
+                  <ul>
+                    <li>
+                      <a href="https://www.facebook.com/LANslideAU">Facebook</a>
+                    </li>
+                    <li>
+                      <a href="login.html">Login</a>
+                    </li>
+                    <li>
+                      <a href="register.html">Register</a>
+                    </li>
+                    <li>
+                      <a href="games.html" class="spec2">Games</a>
+                    </li>
+                    <li>
+                      <a href="about-us.html" class="spec2">About Us</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </ul>
+          </div>
+          <!--This is the Topnav-->
+        </div>
+        <div class="middle">
+            <a href="Index.html"><img src="../images/title.png" alt="title"/></a>
+        </div>
+        <!--This is the rightnav-->
+        <div class="right">
+          <div class="rightlogo">       
+              <a href="https://www.facebook.com/LANslideAU"><img src="../images/facebook.png" alt="FB link"></a>        
+          </div>
+          <div class="rightnav">
+            <ul>
+              <li>
+                <a href="login.html">Login</a>
+              </li>
+              <li>
+                <a href="register.html">Register</a>
+              </li>   
+            </ul>
+          </div>
+        </div>
+        
+    </header>
+    <!--This is the header-->
+
+    <!--This is the sidebar for navigation-->
+    <div class="sidebar">
+      <div class="logo-details">
+      <div class="logo_name">LAN-Slide
+        <i class='bx bx-menu' id="btn"></i>
+      </div>
+      </div>
+      <ul class="nav-list">
+        <li>
+            <i class='bx bx-search' ></i>
+            <div id="searchbox">
+              <input type="text" v-model="search" placeholder="Search...">
+            </div>
+            <span class="tooltip">Search</span>
+        </li>
+        <li>
+          <a href="Index.html">
+            <i class='bx bx-grid-alt'></i>
+            <span class="links_name">Home</span>
+          </a>
+            <span class="tooltip">Home</span>
+        </li>
+        <li>
+          <a href="rego.html">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Registration List</span>
+          </a>
+          <span class="tooltip">Registration List</span>
+        </li>
+        <li>
+          <a href="contact.html">
+            <i class='bx bx-chat' ></i>
+            <span class="links_name">Contact Us</span>
+          </a>
+          <span class="tooltip">Contact Us</span>
+        </li>
+        <li>
+          <a href="competitions.html">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Competitions</span>
+          </a>
+          <span class="tooltip">Competitions</span>
+        </li>
+        <li>
+          <a href="events.html">
+            <i class='bx bx-folder' ></i>
+            <span class="links_name">Past Events</span>
+          </a>
+          <span class="tooltip">Past Events</span>
+        </li>
+        <li>
+          <a href="bookings.html">
+            <i class='bx bx-cart-alt' ></i>
+            <span class="links_name">Seat Bookings</span>
+          </a>
+          <span class="tooltip">Seat Bookings</span>
+        </li>
+        <li>
+          <a href="otherlans.html">
+            <i class='bx bx-heart' ></i>
+            <span class="links_name">Other Lans</span>
+          </a>
+          <span class="tooltip">Other Lans</span>
+        </li>
+        <li>
+          <a href="rules.html">
+          <i class='bx bx-ruler'></i>
+            <span class="links_name">Rules</span>
+          </a>
+          <span class="tooltip">Rules</span>
+        </li>
+        <li>
+        <a href="https://discord.gg/CH3zJhaSWH">
+          <i class='bx bxl-discord' ></i>
+          <span class="links_name">Discord</span>
+        </a>
+        <span class="tooltip">Discord</span>
+        </li>
+      </ul>
+      <div class="discordwidget">
+        <widgetbot
+        server="864723278458257438"
+        channel="864724547311370251"
+        height="600px"
+        ></widgetbot>
+        <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+      </div>
+    </div>
+    <!--This is the sidebar for navigation-->
+      <div class="container"> 
+        <div class="Body">
+          <div class="main">           
+            <h1>Past Events</h1>   
+            <div id="compapp">
+              <section>                 
+                      <div class="viewer" v-if="isGridView" key="GridView">
+                          <div class="grid-view">
+                              <div class="item">
+                                <table >
+                                  <h3 style="color: orange;">LAN-slide v29</h3>
+                                  <tbody>
+                                    <tr>
+                                      <td>April 17, 2021</td>                                 
+                                    </tr>
+                                    <tr>
+                                      <td>Aspendale Gardens Community Centre</td>                                     
+                                    </tr>                                                                                                   
+                                  </tbody>
+                                </table>
+                                <div>
+                                  <table>
+                                    <tr>
+                                      <td><button type="submit" 
+                                      id="bootn">Registrations</button></td>                                     
+                                      <td><button  type="submit" 
+                                        id="bootn" target="_blank">
+                                        Photos</button></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <table >
+                                  <h3 style="color: orange;">LAN-slide v28</h3>
+                                  <tbody>
+                                    <tr>
+                                      <td>January 10, 2020</td>                                 
+                                    </tr>
+                                    <tr>
+                                      <td>Aspendale Gardens Community Centre</td>                                     
+                                    </tr>                                                                                                   
+                                  </tbody>
+                                </table>
+                                <div>
+                                  <table>
+                                    <tr>
+                                      <td><button type="submit" 
+                                      id="bootn">Registrations</button></td>                                     
+                                      <td><button  type="submit" 
+                                        id="bootn" target="_blank">
+                                        Photos</button></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <table >
+                                  <h3 style="color: orange;">LAN-slide v27</h3>
+                                  <tbody>
+                                    <tr>
+                                      <td>July 05, 2019</td>                                 
+                                    </tr>
+                                    <tr>
+                                      <td>Aspendale Gardens Community Centre</td>                                     
+                                    </tr>                                                                                                   
+                                  </tbody>
+                                </table>
+                                <div>
+                                  <table>
+                                    <tr>
+                                      <td><button type="submit" 
+                                      id="bootn">Registrations</button></td>                                     
+                                      <td><button  type="submit" 
+                                        id="bootn" target="_blank">
+                                        Photos</button></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <table >
+                                  <h3 style="color: orange;">LAN-slide v26</h3>
+                                  <tbody>
+                                    <tr>
+                                      <td>April 12, 2019</td>                                 
+                                    </tr>
+                                    <tr>
+                                      <td>Aspendale Gardens Community Centre</td>                                     
+                                    </tr>                                                                                                   
+                                  </tbody>
+                                </table>
+                                <div>
+                                  <table>
+                                    <tr>
+                                      <td><button type="submit" 
+                                      id="bootn">Registrations</button></td>                                     
+                                      <td><button  type="submit" 
+                                        id="bootn" target="_blank">
+                                        Photos</button></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <table >
+                                  <h3 style="color: orange;">LAN-slide v25</h3>
+                                  <tbody>
+                                    <tr>
+                                      <td>January 11, 2019</td>                                 
+                                    </tr>
+                                    <tr>
+                                      <td>Aspendale Gardens Community Centre</td>                                     
+                                    </tr>                                                                                                   
+                                  </tbody>
+                                </table>
+                                <div>
+                                  <table>
+                                    <tr>
+                                      <td><button type="submit" 
+                                      id="bootn">Registrations</button></td>                                     
+                                      <td><button  type="submit" 
+                                        id="bootn" target="_blank">
+                                        Photos</button></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <table >
+                                  <h3 style="color: orange;">LAN-slide v24</h3>
+                                  <tbody>
+                                    <tr>
+                                      <td>September 28, 2018</td>                                 
+                                    </tr>
+                                    <tr>
+                                      <td>Aspendale Gardens Community Centre</td>                                     
+                                    </tr>                                                                                                   
+                                  </tbody>
+                                </table>
+                                <div>
+                                  <table>
+                                    <tr>
+                                      <td><button type="submit" 
+                                      id="bootn">Registrations</button></td>                                     
+                                      <td><button  type="submit" 
+                                        id="bootn" target="_blank">
+                                        Photos</button></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <table >
+                                  <h3 style="color: orange;">LAN-slide v23</h3>
+                                  <tbody>
+                                    <tr>
+                                      <td>July 06, 2018</td>                                 
+                                    </tr>
+                                    <tr>
+                                      <td>Aspendale Gardens Community Centre</td>                                     
+                                    </tr>                                                                                                   
+                                  </tbody>
+                                </table>
+                                <div>
+                                  <table>
+                                    <tr>
+                                      <td><button type="submit" 
+                                      id="bootn">Registrations</button></td>                                     
+                                      <td><button  type="submit" 
+                                        id="bootn" target="_blank">
+                                        Photos</button></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <table >
+                                  <h3 style="color: orange;">LAN-slide v22</h3>
+                                  <tbody>
+                                    <tr>
+                                      <td>April 06, 2018</td>                                 
+                                    </tr>
+                                    <tr>
+                                      <td>Aspendale Gardens Community Centre</td>                                     
+                                    </tr>                                                                                                   
+                                  </tbody>
+                                </table>
+                                <div>
+                                  <table>
+                                    <tr>
+                                      <td><button type="submit" 
+                                      id="bootn">Registrations</button></td>                                     
+                                      <td><button  type="submit" id="bootn" target="_blank">Photos</button></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <table >
+                                  <h3 style="color: orange;">LAN-slide v21</h3>
+                                  <tbody>
+                                    <tr>
+                                      <td>September 29, 2017</td>                                 
+                                    </tr>
+                                    <tr>
+                                      <td>Aspendale Gardens Community Centre</td>                                     
+                                    </tr>                                                                                                   
+                                  </tbody>
+                                </table>
+                                <div>
+                                  <table>
+                                    <tr>
+                                      <td><button type="submit" 
+                                      id="bootn">Registrations</button></td>                                     
+                                      <td><button  type="submit" id="bootn" target="_blank">Photos</button></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <table >
+                                  <h3 style="color: orange;">LAN-slide v20</h3>
+                                  <tbody>
+                                    <tr>
+                                      <td>July 07, 2017</td>                                 
+                                    </tr>
+                                    <tr>
+                                      <td>Aspendale Gardens Community Centre</td>                                     
+                                    </tr>                                                                                                   
+                                  </tbody>
+                                </table>
+                                <div>
+                                  <table>
+                                    <tr>
+                                      <td><button type="submit" 
+                                      id="bootn">Registrations</button></td>                                     
+                                      <td><button  type="submit" id="bootn" target="_blank">Photos</button></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <table >
+                                  <h3 style="color: orange;">LAN-slide v19</h3>
+                                  <tbody>
+                                    <tr>
+                                      <td>April 07, 2017</td>                                 
+                                    </tr>
+                                    <tr>
+                                      <td>Aspendale Gardens Community Centre</td>                                     
+                                    </tr>                                                                                                   
+                                  </tbody>
+                                </table>
+                                <div>
+                                  <table>
+                                    <tr>
+                                      <td><button type="submit" 
+                                      id="bootn">Registrations</button></td>                                     
+                                      <td><button  type="submit" id="bootn" target="_blank">Photos</button></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <table >
+                                  <h3 style="color: orange;">LAN-slide v18</h3>
+                                  <tbody>
+                                    <tr>
+                                      <td>January 13, 2017</td>                                 
+                                    </tr>
+                                    <tr>
+                                      <td>Aspendale Gardens Community Centre</td>                                     
+                                    </tr>                                                                                                   
+                                  </tbody>
+                                </table>
+                                <div>
+                                  <table>
+                                    <tr>
+                                      <td><button type="submit" 
+                                      id="bootn">Registrations</button></td>                                     
+                                      <td><button  type="submit" id="bootn" target="_blank">Photos</button></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <table >
+                                  <h3 style="color: orange;">LAN-slide v17</h3>
+                                  <tbody>
+                                    <tr>
+                                      <td>September 23, 2016</td>                                 
+                                    </tr>
+                                    <tr>
+                                      <td>Aspendale Gardens Community Centre</td>                                     
+                                    </tr>                                                                                                   
+                                  </tbody>
+                                </table>
+                                <div>
+                                  <table>
+                                    <tr>
+                                      <td><button type="submit" 
+                                      id="bootn">Registrations</button></td>                                     
+                                      <td><button  type="submit" id="bootn" target="_blank">Photos</button></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <table >
+                                  <h3 style="color: orange;">LAN-slide v16</h3>
+                                  <tbody>
+                                    <tr>
+                                      <td>July 01, 2016</td>                                 
+                                    </tr>
+                                    <tr>
+                                      <td>Aspendale Gardens Community Centre</td>                                     
+                                    </tr>                                                                                                   
+                                  </tbody>
+                                </table>
+                                <div>
+                                  <table>
+                                    <tr>
+                                      <td><button type="submit" 
+                                      id="bootn">Registrations</button></td>                                     
+                                      <td><button  type="submit" id="bootn" target="_blank">Photos</button></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <table >
+                                  <h3 style="color: orange;">LAN-slide v15</h3>
+                                  <tbody>
+                                    <tr>
+                                      <td>April 01, 2016</td>                                 
+                                    </tr>
+                                    <tr>
+                                      <td>Aspendale Gardens Community Centre</td>                                     
+                                    </tr>                                                                                                   
+                                  </tbody>
+                                </table>
+                                <div>
+                                  <table>
+                                    <tr>
+                                      <td><button type="submit" 
+                                      id="bootn">Registrations</button></td>                                     
+                                      <td><button  type="submit" id="bootn" target="_blank">Photos</button></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <table >
+                                  <h3 style="color: orange;">LAN-slide v14</h3>
+                                  <tbody>
+                                    <tr>
+                                      <td>January 08, 2016</td>                                 
+                                    </tr>
+                                    <tr>
+                                      <td>Aspendale Gardens Community Centre</td>                                     
+                                    </tr>                                                                                                   
+                                  </tbody>
+                                </table>
+                                <div>
+                                  <table>
+                                    <tr>
+                                      <td><button type="submit" 
+                                      id="bootn">Registrations</button></td>                                     
+                                      <td><button  type="submit" id="bootn" target="_blank">Photos</button></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                          </div>
+                      </div>                     
+                  </transition-group>
+              </section>
+          </div>      
+          </div>
+        </div>  
+        <div class="Side-panel">
+          <div class="section-1">
+            <h2>Excited for a lan party?</h2>
+            <div>
+              <a href="https://logwork.com/countdown-q7c8" class="countdown-timer" 
+                data-style="circles" data-timezone="Australia/Melbourne" 
+                data-textcolor="#ff9f63" data-date="2021-10-08 13:33" data-background="#3decf5" 
+                data-digitscolor="#ff9f63" data-unitscolor="#ff9f63" style="z-index: -1;">Lan-slide Event Starts In
+            </a>
+            </div>
+          </div>
+          <div class="section-2">
+            <h1>For Gamers By Gamers</h1>
+            <div>
+              <video width="100%" height="100%" loop="true" controls autoplay="true" controls muted>
+                <source src="../images/lanslide.mp4">
+              </video>
+            </div>
+          </div>
+          <div class="section-3">
+            <div class="title">
+              <h1>General Information</h1>
+            </div>
+              <ul>
+                <li>
+                  Start	Saturday, April 17 2022 @ 9:00am
+                </li>
+                <li>
+                  End	Sunday, April 18 2022 @ 1:00am
+                </li>
+                <li>
+                  Cost	$30.00
+                </li>
+              </ul>
+              <div class="footnotes">
+                <p>
+                  LAN-slide is run as a community event by a dedicated group of unpaid Event Coordinators.
+                  Entry fees are charged to cover costs of venue hire, electricity and other necessary equipment.
+                </p>
+              </div>             
+          </div>
+        </div>
+      </div>
+    <!--This is the footer-->
+    <footer class="footer">
+      <div class="texter">
+        <p>
+          LAN-slide is run as a community event by a dedicated group of unpaid Event Coordinators.
+          Entry fees are charged to cover costs of venue hire, electricity and other necessary equipment.
+        </p>
+      </div>   
+    </div>
+    <script src="https://cdn.logwork.com/widget/countdown.js"></script>
+    <script> 
+      let btn = document.querySelector("#btn");
+      let sidebar = document.querySelector(".sidebar");
+      let searchBtn = document.querySelector(".bx-search"); 
+      let menubtn = document.querySelector("#menubtn")
+      let dropm = document.querySelector(".dropm");
+      menubtn.onclick = function()
+      {
+        dropm.classList.toggle("active");
+      }
+      btn.onclick = function()
+      {
+        sidebar.classList.toggle("active");
+      }
+      searchBtn.onclick = function()
+      {
+        sidebar.classList.toggle("active");
+      }
+      const input = document.getElementById('value');
+      const progressValue = document.querySelector('.Progress-value');
+      const progress = document.querySelector('progress');
+      function setValue(value) 
+      {
+        progressValue.style.width = `${value}%`;
+        progress.value = value;
+      }
+      setValue(input.value);
+      input.addEventListener('change', e => {
+      const value = e.target.value;
+      setValue(value);
+      });
+    </script>
+    <script src="eventapp.js"></script>
+  </body>
+</html> 

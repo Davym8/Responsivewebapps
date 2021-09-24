@@ -1,0 +1,758 @@
+html 
+{ 
+  background: url("../images/back.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body
+{
+  margin: 0;
+  height: 100%;
+}
+
+/* HEADER CONTENT */
+header
+{
+  display: flex;
+  flex-wrap: nowrap;
+  border-style: groove;
+  border-color: orange;
+  background-color: black;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.80;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+  color: white;
+  position: relative;
+  height: 130px;
+  width: inherit;
+  overflow: visible;
+}
+header > div 
+{
+  width: 33%;
+  break-inside: avoid-column;
+  display: inline-block;
+}
+header .leftheader
+{   
+  
+  box-sizing: border-box;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  /*
+  min-width: none;
+  */
+}
+.leftheader .logo
+{ 
+  position: relative;
+  left: 10px;
+  top: 5px;
+}
+
+header .leftheader .topnav li
+{ 
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+header .leftheader .topnav a
+{
+  color: rgb(255, 149, 62);
+  padding: 10px 15px;
+  border-radius: 5px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 20px;
+  border: 3px solid rgb(255, 149, 62);
+  white-space: nowrap;
+  overflow: hidden;
+
+}
+header .leftheader .topnav li:hover
+{
+  background: #fff;
+  color: rgb(255, 149, 62);
+}
+
+
+header .middle 
+{ 
+  border-left: 2px solid orange;
+  border-right: 2px solid orange;
+  
+}
+header .middle img
+{
+  float: left;
+  position: relative;
+  left: 25%;
+  width: 50%;
+  height: 100px;
+}
+
+header .right
+{
+  
+  box-sizing: border-box;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+}
+
+header .right img
+{
+  position: relative;
+  left: 10px;
+  top: 5px;
+}
+header .right .rightnav li
+{
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+header .right .rightnav li a
+{
+  color: rgb(255, 149, 62);
+  font-size: 20px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 3px solid rgb(255, 149, 62);
+
+}
+header .right .rightnav li a:hover
+{
+  background: #fff;
+  color: rgb(255, 149, 62);
+}
+
+
+/* ALL SIDEBAR CONTENT */
+.sidebar
+{
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.80;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+  position: relative;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 80px;
+  background: black;
+  padding:  14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+  border-right: 2px solid orange;
+  position: inline-block;
+  float:left;
+}
+.sidebar.active
+{
+  width: 200px;
+}
+.logo-details .logo_name
+{
+  font-size: 20px;
+  font-style: oblique;
+  color: rgb(255, 149, 62);
+  position: relative;
+  left: 1px;
+  font-size: 30px;
+}
+.sidebar.active .logo-details .logo
+{
+  opacity: 1;
+  pointer-events: none;
+}
+.sidebar .logo-details #btn
+{ 
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  left: 50%;
+}
+
+.sidebar .nav-list
+{
+  padding:  0;
+}
+
+.sidebar ul
+{
+  margin-top: 20px;
+}
+.sidebar ul li
+{
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin:10 0px;
+  list-style: none;
+}
+.sidebar ul li .tooltip
+{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: black;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0s;
+  display: block;
+}
+
+.sidebar.active ul li .tooltip
+{
+  display: none;
+}
+.sidebar li:hover .tooltip
+{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar ul li input
+{
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  height: 50px;
+  width: 100%;
+  width: 150px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: black;
+  padding-left: 50px;
+
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar.active ul li input
+{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar ul li .bx-search
+{
+  position: absolute;
+  z-index: 99;
+  color: rgb(255, 149, 62);
+  transition: all 0.5 ease;
+}
+
+.sidebar ul li .bx-search:hover
+{
+  background: #fff;
+  color: rgb(255, 149, 62);
+}
+
+.sidebar ul li a
+{
+  color: rgb(255, 149, 62);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+.sidebar ul li a:hover
+{
+  color: rgb(255, 149, 62);
+  background: #fff;
+}
+.sidebar ul li i
+{
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.sidebar .links_name
+{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar.active .links_name
+{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar .discordwidget
+{ 
+  opacity: 0;
+  width:80px;
+}
+.sidebar.active .discordwidget
+{
+  opacity: 1;
+  pointer-events: auto;
+  width: 200px;
+  transition: all 0.4s ease;
+  
+}
+
+.container 
+{ 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Body Body Side-panel"
+    "Body Body Side-panel"
+    "Body Body Side-panel"
+    "Body Body Side-panel";
+    justify-content: start; 
+}
+html,body, .container 
+{
+  height: 102%;
+  margin: 0;
+}
+/* GRID FOR BODY */
+.Body 
+{ 
+  color: #fff;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "main main main"
+    "main main main"
+    "main main main"
+    "main main main";  
+  grid-area: Body; 
+}
+/* MAINT CONTENT */
+.main 
+{ 
+  position: relative;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, .8);
+  color: #fff;
+  grid-area: main; 
+  background-image: url("../images/lanslide-bg.jpg");
+  background-size: cover;
+  border-bottom: 2px solid orange;
+}
+
+.regcontainer
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.contact 
+{
+  box-shadow: 10px 10px 60px rgba(0, 0, 0, .4);
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .8);
+}
+.contact:before 
+{   
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.wrapper 
+{
+  margin-left: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+  
+.card 
+{
+  max-width: 124px;
+  margin: 12px;
+  height: 130px;
+  transition: .15s all ease-in-out;
+  padding-bottom: 50px;
+}
+.card:hover 
+{
+  transform: scale(1.1);
+}
+.wrapper a 
+{
+  text-decoration: none;
+  padding: 12px;
+  color: orange;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card img 
+{
+  height: 100px;
+}
+.card a 
+{
+  text-align: center;
+}
+small 
+{
+  font-size: 10px;
+  padding: 4px;
+}
+
+
+
+
+
+
+
+/* SIDE PANEL AND SECTIONS */
+.Side-panel 
+{   
+  color: #fff;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "section-1 section-1 section-1"
+    "section-2 section-2 section-2"
+    "section-3 section-3 section-3"; 
+  grid-area: Side-panel; 
+}
+
+.section-1 
+{ 
+  border-left: 2px solid orange;;
+  grid-area: section-1;
+  text-align: center;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.80;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+  background: black;
+  color: #ff9f63;
+}
+.section-2 
+{ 
+  border: 2px solid orange;
+  grid-area: section-2; 
+  text-align: center;
+  background: black;
+  color: #ff9f63;
+}
+.section-3 
+{ 
+  border-bottom: 2px solid orange;
+  border-left: 2px solid orange;
+  grid-area: section-3; 
+  color: #fff;
+  opacity: 0.8;
+  background: black;
+  color: #ff9f63;
+  align-items: center;
+}
+.section-3 .title
+{
+  
+  text-align: center;
+  
+}
+.section-3 ul
+{
+  display: table;
+  text-align: left;
+  align-items: center;
+  font-size: 20px;
+  margin-left: 50px;
+}
+.footnotes
+{
+  display: none;
+}
+.footer
+{
+  height: 5vh;
+  position:relative;
+  clear: both;
+  bottom: -23%;
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding:0;
+
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=100);
+  -moz-opacity: 0.80;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+  background: black;
+
+}
+/* HEADER MENU  */
+header .leftheader .topnav #menubtn
+{
+  position: absolute;
+  border: 2px solid orange;
+  flex-direction: column;
+  justify-content: right;
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  top: 55px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 9999;
+  display: none;
+}
+.dropm 
+{
+  display: none;
+}
+
+.dropm.active
+{
+  top: 10px;
+  height: 200px;
+  width: 160px;
+  background: black;
+  padding: 14px;
+  position: relative;
+  overflow: visible !important;
+  z-index: 9999;
+  right: 150px;
+  transition: all 0.5s ease;
+  align-items:center;
+  display: flex;
+}
+.dropm ul 
+{
+  padding: 0;
+  text-align: center;
+  z-index: 9999;
+    
+}
+.dropm ul li
+{
+  margin-bottom: 10px;
+  text-align: center;
+  z-index: 9999;
+}
+
+/* RESPONSIVE DATA */
+@media all and (max-width: 380px) 
+{
+  header .leftheader
+  {
+    display: flex;
+    width: 100%;
+  }
+  header .leftheader .topnav a.spec 
+  {
+    display: none;
+  }
+  header .middle 
+  {
+    display: none;
+  }
+  header .right
+  {
+    display: none;
+  }
+  header .leftheader .topnav #menubtn
+  {
+    position: absolute;
+    border: 2px solid orange;
+    flex-direction: column;
+    justify-content: right;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    top: 55px;
+    z-index: 9999;
+    right: 20px;
+    cursor: pointer;
+    display: flex;
+  }
+  .dropm.active
+  {
+    top: 50px;
+    height: 400px;
+    width: 160px;
+    background: black;
+    padding: 14px;
+    position: relative;
+    overflow: visible !important;
+    z-index: 9999;
+    right: 150px;
+    transition: all 0.5s ease;
+    align-items:center;
+    display: flex;
+  }
+
+  
+}
+@media all and (min-width: 380px) and (max-width: 600px) 
+{
+  
+  header .middle 
+  {
+    display: none;
+  }
+  header .leftheader
+  {
+    display: flex;
+    width: 100%;
+  }
+
+  header .leftheader .topnav a.spec2 
+  {
+    display: none;
+  }
+
+  header .leftheader ul li a
+  {
+    font-size: 20px;
+  }
+  header .right
+  {
+    display: none;
+  }
+  header .leftheader .topnav #menubtn
+  {
+    position: absolute;
+    border: 2px solid orange;
+    flex-direction: column;
+    justify-content: right;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    top: 55px;
+    right: 20px;
+    cursor: pointer;
+    display: flex;
+    z-index: 9999;
+  }
+  .dropm.active
+  {
+    top: 30px;
+    height: 200px;
+    width: 160px;
+    background: black;
+    padding: 14px;
+    position: relative;
+    overflow: visible !important;
+    z-index: 9999;
+    right: 150px;
+    transition: all 0.5s ease;
+    align-items:center;
+    display: flex;
+  }
+}
+@media all and (min-width: 600px) and (max-width: 800px) 
+{
+  header .leftheader
+  {
+    display: flex;
+    width: 50%;
+  }
+  header .middle 
+  {
+    display: none;
+  }
+  header .right 
+  {
+    width: 50%;
+  }
+}
+@media all and (min-width: 800px) and (max-width: 900px) 
+{
+  
+  header .middle 
+  {
+    display: none;
+  }
+  header .right 
+  {
+    width: 77%;
+  }
+}
+@media all and (min-width: 600px) and (max-width: 1000px) 
+{
+  header .leftheader .topnav a
+  {
+    font-size: 10px;
+    font-size: 1vh;
+  }
+}
+
+@media all and (max-width: 1000px) 
+{
+  
+  header .right .rightnav li
+  {
+    padding-bottom: 20px;
+  }
+  header .right .rightnav li a
+  {
+    font-size: 1vw;
+    font-size: 1vh;
+  }
+  .footnotes
+  {
+    display: flex;
+  }
+}
+@media all and (max-width: 1200px) 
+{
+  .container 
+  { 
+    display: block;
+    width: 100%;
+  }
+ 
+  .footer
+  {
+    display: none;
+  }
+}
